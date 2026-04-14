@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/dashboardFragment"
+        android:icon="@drawable/ic_nav_dashboard"
+        android:title="@string/nav_dashboard"/>
+    <item android:id="@+id/chartsFragment"
+        android:icon="@drawable/ic_nav_charts"
+        android:title="@string/nav_charts"/>
+    <item android:id="@+id/compassFragment"
+        android:icon="@drawable/ic_nav_compass"
+        android:title="@string/nav_compass"/>
+    <item android:id="@+id/loggerFragment"
+        android:icon="@drawable/ic_nav_logger"
+        android:title="@string/nav_logger"/>
+    <item android:id="@+id/toolsFragment"
+        android:icon="@drawable/ic_nav_tools"
+        android:title="@string/nav_tools"/>
+</menu>

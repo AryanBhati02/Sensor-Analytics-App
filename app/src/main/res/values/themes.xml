@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.SensorApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+    <style name="Theme.SensorApp" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/accent_cyan</item>
+        <item name="colorOnPrimary">@color/bg_dark</item>
+        <item name="colorPrimaryContainer">#1A00E5FF</item>
+        <item name="colorOnPrimaryContainer">@color/accent_cyan</item>
+        <item name="colorSecondary">@color/accent_amber</item>
+        <item name="colorOnSecondary">@color/bg_dark</item>
+        <item name="colorSecondaryContainer">#1AFFB300</item>
+        <item name="colorOnSecondaryContainer">@color/accent_amber</item>
+        <item name="colorTertiary">@color/accent_green</item>
+        <item name="colorOnTertiary">@color/bg_dark</item>
+        <item name="colorSurface">@color/card_bg</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/card_bg_elevated</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="colorError">@color/accent_red</item>
+        <item name="colorOnError">@color/bg_dark</item>
+        <item name="colorOutline">@color/divider</item>
+        <item name="android:colorBackground">@color/bg_dark</item>
         <item name="android:windowBackground">@color/bg_dark</item>
         <item name="android:statusBarColor">@color/bg_dark</item>
         <item name="android:navigationBarColor">@color/bg_dark</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
+
+    <style name="Theme.SensorApp.Splash" parent="Theme.SensorApp">
+        <item name="android:windowBackground">@color/bg_dark</item>
+    </style>
+
 </resources>
