@@ -6,7 +6,7 @@ A real-time Android sensor dashboard that displays live data from the device's A
 
 ## 📱 Screenshots
 
-> Run the app on your device or emulator to see the live dashboard.
+![Dashboard](screenshots/dashboard.jpeg)
 
 ---
 
