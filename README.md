@@ -1,138 +1,168 @@
-# 📡 SensorApp
+# 🚀 Sensor Analytics App (SensorPro)
 
-A real-time Android sensor dashboard that displays live data from the device's Accelerometer, Light, and Proximity sensors.
-
----
-
-## 📱 Screenshots
+> Transforming smartphones into **real-time sensor intelligence systems**
 
 <p align="center">
-  <img src="screenshots/dashboard.jpeg" width="300"/>
+  <img src="https://img.shields.io/badge/Platform-Android-3DDC84?style=for-the-badge&logo=android"/>
+  <img src="https://img.shields.io/badge/Language-Java-ED8B00?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Architecture-Modular-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Version-v2.0-success?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge"/>
 </p>
 
 ---
 
-## ✨ Features
+## 📸 Preview
 
-- **Accelerometer** — Displays real-time X, Y, Z axis values in m/s²
-- **Light Sensor** — Shows ambient light intensity in Lux (lx)
-- **Proximity Sensor** — Shows distance to nearby objects in centimetres (cm)
-- **Live Updates** — All sensors update in real time using `SENSOR_DELAY_NORMAL`
-- **Battery Friendly** — Sensors are unregistered automatically when the app is paused or closed
-- **Modern Dark UI** — Card-based dark theme with colour-coded sensor panels
+| Dashboard | Charts | Compass |
+|----------|--------|--------|
+| ![](screenshots/dashboard.jpeg) | ![](screenshots/charts.jpeg) | ![](screenshots/compass.jpeg) |
+
+| Tools | PC Live Dashboard |
+|------|------------------|
+| ![](screenshots/tools.jpeg) | ![](screenshots/pc_dashboard.png) |
+---
+
+## 🧠 What is this?
+
+**SensorPro** is a **professional-grade Android application** that turns your device into a powerful **sensor analytics platform**.
+
+It goes beyond simple sensor readings by combining:
+
+* 📊 Real-time monitoring
+* 📈 Advanced analytics
+* 🎨 Custom visualizations
+* 🤖 Intelligent detection systems
+
+---
+
+## ⚡ Core Capabilities
+
+### 📊 Real-Time Sensor Engine
+
+* Live dashboard with accelerometer, light & proximity
+* Continuous high-frequency sensor streaming
+* Real-time statistics (min / max / avg)
+
+---
+
+### 📈 Data Analytics & Intelligence
+
+* FFT-based frequency analysis (signal processing)
+* Activity recognition (motion classification)
+* Gesture & shake detection
+* Fall detection system
+* Anomaly detection engine
+
+---
+
+### 🎨 Advanced Visualizations
+
+* Custom Canvas-based rendering engine
+* Heatmaps, waveform graphs, gauge meters
+* 3D orientation cube & physics-based UI elements
+* Interactive charts (MPAndroidChart)
+
+---
+
+### 🔄 Background & Automation
+
+* Foreground services for continuous tracking
+* Scheduled recording via WorkManager
+* Floating HUD overlay across apps
+
+---
+
+### 🌐 Connectivity & Integration
+
+* Built-in HTTP server → live PC dashboard
+* CSV export & PDF report generation
+* Bluetooth-based data sharing
+
+---
+
+## 🏗️ Architecture Overview
+
+Designed using a **modular layered architecture**:
+
+```text
+data     → persistence (Room DB, models)
+service  → background processing & workers
+server   → networking & REST endpoints
+ui       → fragments & navigation
+utils    → analytics (FFT, ML logic, detection)
+views    → custom rendering (Canvas-based)
+```
+
+---
+
+## 🚀 Evolution
+
+### 🔥 v2.0 — Advanced Platform
+
+* Complete architectural redesign
+* Modular system implementation
+* Advanced analytics engine
+* Visualization framework
+* Background services & automation
+
+### 🟢 v1.0 — Foundation
+
+* Basic sensor dashboard
+* Real-time sensor readings
+* Simple UI
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Language | Java |
-| Min SDK | API 21 (Android 5.0) |
-| UI | XML Layouts + CardView |
-| Sensors | Android `SensorManager` API |
-| Theme | MaterialComponents (Dark) |
+| Category     | Tech                    |
+| ------------ | ----------------------- |
+| Language     | Java                    |
+| UI           | XML + Material Design   |
+| Architecture | Modular (MVVM-inspired) |
+| Database     | Room                    |
+| Charts       | MPAndroidChart          |
+| Background   | WorkManager             |
+| Networking   | Java HTTP Server        |
 
 ---
 
-## 📂 Project Structure
+## 🎯 Why this project stands out
 
-```
-app/
-└── src/
-    └── main/
-        ├── java/com/mad/sensorapp/
-        │   └── MainActivity.java       # Sensor logic & UI updates
-        └── res/
-            ├── layout/
-            │   └── activity_main.xml   # Dashboard UI layout
-            ├── values/
-            │   ├── colors.xml          # Dark theme colour palette
-            │   ├── strings.xml         # App strings
-            │   └── themes.xml          # App theme (dark)
-            └── drawable/
-                ├── icon_bg_cyan.xml    # Accelerometer icon background
-                ├── icon_bg_amber.xml   # Light sensor icon background
-                ├── icon_bg_green.xml   # Proximity icon background
-                ├── dot_cyan.xml        # Live indicator dot (cyan)
-                ├── dot_amber.xml       # Live indicator dot (amber)
-                └── dot_green.xml       # Live indicator dot (green)
-```
+✔ Real-world problem solving (sensor analytics)
+✔ Advanced concepts (signal processing, detection systems)
+✔ Custom rendering (Canvas-based UI)
+✔ Modular scalable architecture
+✔ 40+ integrated features
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
-
-- Android Studio (latest version recommended)
-- Android device or emulator running API 21+
-- Physical device recommended for accurate sensor readings
-
-### Installation
-
-1. Clone or download this repository
-2. Open the project in **Android Studio**
-3. Let Gradle sync complete
-4. Connect your Android device (USB debugging enabled) or start an emulator
-5. Click **Run ▶** or press `Shift + F10`
-
-### Dependency
-
-Make sure your `build.gradle (Module: app)` includes:
-
-```gradle
-dependencies {
-    implementation 'androidx.cardview:cardview:1.0.0'
-}
+```bash
+git clone https://github.com/AryanBhati02/Sensor-Analytics-App
 ```
+
+Open in Android Studio → Run on a real device.
 
 ---
 
-## ⚙️ How It Works
+## 📌 Future Improvements
 
-`MainActivity.java` implements `SensorEventListener` and listens to three sensors:
-
-```
-onResume()  → registerListener()   // Start reading sensors
-onPause()   → unregisterListener() // Stop to save battery
-onSensorChanged() → update TextViews with live values
-```
-
-| Sensor | Android Constant | Output |
-|---|---|---|
-| Accelerometer | `Sensor.TYPE_ACCELEROMETER` | X, Y, Z in m/s² |
-| Light | `Sensor.TYPE_LIGHT` | Lux value |
-| Proximity | `Sensor.TYPE_PROXIMITY` | Distance in cm |
-
----
-
-## 🎨 UI Colour Palette
-
-| Colour | Hex | Used For |
-|---|---|---|
-| Background | `#0A0E1A` | App background |
-| Card | `#131929` | Sensor cards |
-| Cyan | `#00E5FF` | Accelerometer |
-| Amber | `#FFB300` | Light sensor |
-| Green | `#00E676` | Proximity sensor |
-
----
-
-## 📋 Notes
-
-- On **emulators**, sensor values may be simulated or unavailable. Use a real device for accurate readings.
-- The proximity sensor on most phones only returns two values: `0 cm` (near) and a max value (far).
-- Light sensor readings vary significantly depending on environment and device hardware.
+* Cloud sync (Firebase)
+* AI-based anomaly detection
+* WearOS integration
+* Cross-device analytics dashboard
 
 ---
 
 ## 👨‍💻 Author
 
-**[Aryan Bhati]**   
+**Aryan Bhati**
 
 ---
 
 ## 📄 License
 
-This project is for educational purposes only.
+MIT License
