@@ -1,69 +1,80 @@
 package com.mad.sensorapp;
 
-import android.content.Context;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
+import androidx.preference.PreferenceManager;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements SensorEventListener {
+public class MainActivity extends AppCompatActivity {
 
-    private TextView tvAccelerometer, tvLight, tvProximity;
-    private SensorManager sensorManager;
-    private Sensor accelerometer, lightSensor, proximity;
+    private static final int PERM_REQUEST = 1001;
+    private NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Apply saved theme BEFORE super.onCreate / setContentView
+        boolean isDark = PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean("dark_mode", true);
+        AppCompatDelegate.setDefaultNightMode(
+                isDark ? AppCompatDelegate.MODE_NIGHT_YES
+                       : AppCompatDelegate.MODE_NIGHT_NO);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Link Java variables to XML IDs
-        tvAccelerometer = findViewById(R.id.tvAccelerometer);
-        tvLight = findViewById(R.id.tvLight);
-        tvProximity = findViewById(R.id.tvProximity);
+        NavHostFragment navHost = (NavHostFragment)
+                getSupportFragmentManager().findFragmentById(R.id.navHostFragment);
+        navController = navHost.getNavController();
 
-        // Initialize SensorManager
-        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        BottomNavigationView nav = findViewById(R.id.bottomNavigationView);
+        NavigationUI.setupWithNavController(nav, navController);
 
-        if (sensorManager != null) {
-            accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-            lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
-            proximity = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        requestPermissions();
+    }
+
+    private void requestPermissions() {
+        List<String> needed = new ArrayList<>();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACTIVITY_RECOGNITION)
+                    != PackageManager.PERMISSION_GRANTED)
+                needed.add(Manifest.permission.ACTIVITY_RECOGNITION);
         }
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        // Register listeners when app is in foreground
-        if (accelerometer != null) sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
-        if (lightSensor != null) sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_NORMAL);
-        if (proximity != null) sensorManager.registerListener(this, proximity, SensorManager.SENSOR_DELAY_NORMAL);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        // Unregister to save battery when app is closed/minimized
-        sensorManager.unregisterListener(this);
-    }
-
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            tvAccelerometer.setText("X: " + event.values[0] + "\nY: " + event.values[1] + "\nZ: " + event.values[2]);
-        } else if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
-            tvLight.setText(event.values[0] + " lx");
-        } else if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
-            tvProximity.setText(event.values[0] + " cm");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                    != PackageManager.PERMISSION_GRANTED)
+                needed.add(Manifest.permission.POST_NOTIFICATIONS);
         }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT)
+                    != PackageManager.PERMISSION_GRANTED)
+                needed.add(Manifest.permission.BLUETOOTH_CONNECT);
+        }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
+                != PackageManager.PERMISSION_GRANTED)
+            needed.add(Manifest.permission.RECORD_AUDIO);
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED)
+            needed.add(Manifest.permission.CAMERA);
+
+        if (!needed.isEmpty())
+            ActivityCompat.requestPermissions(this, needed.toArray(new String[0]), PERM_REQUEST);
     }
 
     @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        // Not needed for this assignment
+    public boolean onSupportNavigateUp() {
+        return navController.navigateUp() || super.onSupportNavigateUp();
     }
 }
