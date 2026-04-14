@@ -6,7 +6,9 @@ A real-time Android sensor dashboard that displays live data from the device's A
 
 ## 📱 Screenshots
 
-![Dashboard](screenshots/dashboard.jpeg)
+<p align="center">
+  <img src="screenshots/dashboard.jpeg" width="300"/>
+</p>
 
 ---
 
