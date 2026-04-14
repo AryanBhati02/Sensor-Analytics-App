@@ -1,0 +1,55 @@
+com.mad.sensorapp-lifecycle-runtime-2.6.2-0 C:\Users\Aryann\.gradle\caches\8.9\transforms\03625fc6c3875056a32ba4ef84fc778a\transformed\lifecycle-runtime-2.6.2\res
+com.mad.sensorapp-lifecycle-viewmodel-2.6.2-1 C:\Users\Aryann\.gradle\caches\8.9\transforms\04648256706d993866cf78b895f0ae8f\transformed\lifecycle-viewmodel-2.6.2\res
+com.mad.sensorapp-jetified-activity-ktx-1.9.3-2 C:\Users\Aryann\.gradle\caches\8.9\transforms\107e45daf98d84e407436ea006dcdff4\transformed\jetified-activity-ktx-1.9.3\res
+com.mad.sensorapp-cardview-1.0.0-3 C:\Users\Aryann\.gradle\caches\8.9\transforms\17c3a42e4a7a413027269ce858cbab16\transformed\cardview-1.0.0\res
+com.mad.sensorapp-jetified-lifecycle-viewmodel-ktx-2.6.2-4 C:\Users\Aryann\.gradle\caches\8.9\transforms\20c99e6e61aff0052c9855504d02d16d\transformed\jetified-lifecycle-viewmodel-ktx-2.6.2\res
+com.mad.sensorapp-transition-1.5.0-5 C:\Users\Aryann\.gradle\caches\8.9\transforms\25ad4b5bd144f61e553f6567e8dac45c\transformed\transition-1.5.0\res
+com.mad.sensorapp-jetified-annotation-experimental-1.4.1-6 C:\Users\Aryann\.gradle\caches\8.9\transforms\2aae848bc12af5fe777f20dc34be2a4e\transformed\jetified-annotation-experimental-1.4.1\res
+com.mad.sensorapp-jetified-room-ktx-2.6.1-7 C:\Users\Aryann\.gradle\caches\8.9\transforms\2fcb5d9b3ec0844bca007f5343d649d6\transformed\jetified-room-ktx-2.6.1\res
+com.mad.sensorapp-appcompat-1.7.0-8 C:\Users\Aryann\.gradle\caches\8.9\transforms\381f192da4f046fd08f0b78889d05da7\transformed\appcompat-1.7.0\res
+com.mad.sensorapp-jetified-lifecycle-livedata-core-ktx-2.6.2-9 C:\Users\Aryann\.gradle\caches\8.9\transforms\3c9baad7800b44217a87d77998e20391\transformed\jetified-lifecycle-livedata-core-ktx-2.6.2\res
+com.mad.sensorapp-core-runtime-2.2.0-10 C:\Users\Aryann\.gradle\caches\8.9\transforms\40bd089f2d2e2b9821efccbf03820314\transformed\core-runtime-2.2.0\res
+com.mad.sensorapp-jetified-window-1.0.0-11 C:\Users\Aryann\.gradle\caches\8.9\transforms\464672bf5573b1c33870df0353a0158b\transformed\jetified-window-1.0.0\res
+com.mad.sensorapp-navigation-common-2.8.5-12 C:\Users\Aryann\.gradle\caches\8.9\transforms\4d860da8102f62ca4a730ba07f5ee5ac\transformed\navigation-common-2.8.5\res
+com.mad.sensorapp-jetified-lifecycle-viewmodel-savedstate-2.6.2-13 C:\Users\Aryann\.gradle\caches\8.9\transforms\5c58c196e53e9d1ef07df964312ab2e8\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.2\res
+com.mad.sensorapp-jetified-appcompat-resources-1.7.0-14 C:\Users\Aryann\.gradle\caches\8.9\transforms\5e6b11f02f401eb998a22816f35970d6\transformed\jetified-appcompat-resources-1.7.0\res
+com.mad.sensorapp-jetified-fragment-ktx-1.6.2-15 C:\Users\Aryann\.gradle\caches\8.9\transforms\5fd13b2ab3aa4352ab653fdbd6e30546\transformed\jetified-fragment-ktx-1.6.2\res
+com.mad.sensorapp-sqlite-framework-2.4.0-16 C:\Users\Aryann\.gradle\caches\8.9\transforms\625649a6170c0c44ef6c762cf87036f4\transformed\sqlite-framework-2.4.0\res
+com.mad.sensorapp-jetified-activity-1.9.3-17 C:\Users\Aryann\.gradle\caches\8.9\transforms\65f9c6dcf9956eb0c5775aa41f080421\transformed\jetified-activity-1.9.3\res
+com.mad.sensorapp-jetified-zxing-android-embedded-4.3.0-18 C:\Users\Aryann\.gradle\caches\8.9\transforms\664cb23fde736d87b971e247f518fe38\transformed\jetified-zxing-android-embedded-4.3.0\res
+com.mad.sensorapp-constraintlayout-2.1.4-19 C:\Users\Aryann\.gradle\caches\8.9\transforms\6b283e6f5378720e1c3d0e3abca2c843\transformed\constraintlayout-2.1.4\res
+com.mad.sensorapp-jetified-core-ktx-1.13.1-20 C:\Users\Aryann\.gradle\caches\8.9\transforms\6e7f41f1e0fb9a1d3660a5844c2ad79c\transformed\jetified-core-ktx-1.13.1\res
+com.mad.sensorapp-jetified-lifecycle-service-2.6.2-21 C:\Users\Aryann\.gradle\caches\8.9\transforms\7cc79f00c43ae95e1ef04b86b673ef13\transformed\jetified-lifecycle-service-2.6.2\res
+com.mad.sensorapp-slidingpanelayout-1.2.0-22 C:\Users\Aryann\.gradle\caches\8.9\transforms\82b9f6245bc1182ef7d87b647f1611d1\transformed\slidingpanelayout-1.2.0\res
+com.mad.sensorapp-jetified-profileinstaller-1.3.1-23 C:\Users\Aryann\.gradle\caches\8.9\transforms\8889450adf9d2875c41ecfe190849ff3\transformed\jetified-profileinstaller-1.3.1\res
+com.mad.sensorapp-jetified-lifecycle-runtime-ktx-2.6.2-24 C:\Users\Aryann\.gradle\caches\8.9\transforms\89a542658c14371715d45d5c2358a224\transformed\jetified-lifecycle-runtime-ktx-2.6.2\res
+com.mad.sensorapp-room-runtime-2.6.1-25 C:\Users\Aryann\.gradle\caches\8.9\transforms\8cedc5277b02259fcec60227fac93c19\transformed\room-runtime-2.6.1\res
+com.mad.sensorapp-jetified-savedstate-1.2.1-26 C:\Users\Aryann\.gradle\caches\8.9\transforms\9f18bcdd86a54600c9b9a73eb25a1c3d\transformed\jetified-savedstate-1.2.1\res
+com.mad.sensorapp-preference-1.2.1-27 C:\Users\Aryann\.gradle\caches\8.9\transforms\a6e36662697dbd26bd52c86d80f0accc\transformed\preference-1.2.1\res
+com.mad.sensorapp-jetified-emoji2-views-helper-1.3.0-28 C:\Users\Aryann\.gradle\caches\8.9\transforms\a749ea4c85315d5a864ee13e1ec01a84\transformed\jetified-emoji2-views-helper-1.3.0\res
+com.mad.sensorapp-sqlite-2.4.0-29 C:\Users\Aryann\.gradle\caches\8.9\transforms\b11ca3656abb2770fa46fbec6350e090\transformed\sqlite-2.4.0\res
+com.mad.sensorapp-jetified-savedstate-ktx-1.2.1-30 C:\Users\Aryann\.gradle\caches\8.9\transforms\ba827fe2a822bfe8163595b7b4c80373\transformed\jetified-savedstate-ktx-1.2.1\res
+com.mad.sensorapp-jetified-emoji2-1.3.0-31 C:\Users\Aryann\.gradle\caches\8.9\transforms\bc89c00131e9155eb774f4733cca69d3\transformed\jetified-emoji2-1.3.0\res
+com.mad.sensorapp-navigation-fragment-2.8.5-32 C:\Users\Aryann\.gradle\caches\8.9\transforms\c020d63c3f80fac1aa21ed381106a67f\transformed\navigation-fragment-2.8.5\res
+com.mad.sensorapp-fragment-1.6.2-33 C:\Users\Aryann\.gradle\caches\8.9\transforms\c0d29da4aa8cd264114e968f0660868e\transformed\fragment-1.6.2\res
+com.mad.sensorapp-navigation-runtime-2.8.5-34 C:\Users\Aryann\.gradle\caches\8.9\transforms\c1e77d1f8c5d8234d43659e1ad21b9d1\transformed\navigation-runtime-2.8.5\res
+com.mad.sensorapp-recyclerview-1.3.2-35 C:\Users\Aryann\.gradle\caches\8.9\transforms\c7dcd666cccf4eb0f7801384ac7927dd\transformed\recyclerview-1.3.2\res
+com.mad.sensorapp-material-1.12.0-36 C:\Users\Aryann\.gradle\caches\8.9\transforms\ceb088ce4d9dd4aeb0d057aca325082a\transformed\material-1.12.0\res
+com.mad.sensorapp-jetified-customview-poolingcontainer-1.0.0-37 C:\Users\Aryann\.gradle\caches\8.9\transforms\cee81b7f8fc7c861746be40b79b16e91\transformed\jetified-customview-poolingcontainer-1.0.0\res
+com.mad.sensorapp-jetified-startup-runtime-1.1.1-38 C:\Users\Aryann\.gradle\caches\8.9\transforms\d6db87028e0cbaa6c6d28bb0ef477d2b\transformed\jetified-startup-runtime-1.1.1\res
+com.mad.sensorapp-coordinatorlayout-1.1.0-39 C:\Users\Aryann\.gradle\caches\8.9\transforms\d80aebaa9e0d2c1d33484c3650d12e63\transformed\coordinatorlayout-1.1.0\res
+com.mad.sensorapp-core-1.13.1-40 C:\Users\Aryann\.gradle\caches\8.9\transforms\d8c124b19739cd5d47284b7dae628810\transformed\core-1.13.1\res
+com.mad.sensorapp-navigation-ui-2.8.5-41 C:\Users\Aryann\.gradle\caches\8.9\transforms\dfaff93bd6ce44b30ce1ae2cab935c23\transformed\navigation-ui-2.8.5\res
+com.mad.sensorapp-jetified-lifecycle-process-2.6.2-42 C:\Users\Aryann\.gradle\caches\8.9\transforms\e130854f9862bb0ef4bd97717b353ce0\transformed\jetified-lifecycle-process-2.6.2\res
+com.mad.sensorapp-work-runtime-2.9.0-43 C:\Users\Aryann\.gradle\caches\8.9\transforms\eb31296a5d6eed89de2576ec26f4f362\transformed\work-runtime-2.9.0\res
+com.mad.sensorapp-drawerlayout-1.1.1-44 C:\Users\Aryann\.gradle\caches\8.9\transforms\ee498810f65697ab7fc55b5d7dafec65\transformed\drawerlayout-1.1.1\res
+com.mad.sensorapp-lifecycle-livedata-core-2.6.2-45 C:\Users\Aryann\.gradle\caches\8.9\transforms\f8a1f5ca7e3f8e6d2600990787db6023\transformed\lifecycle-livedata-core-2.6.2\res
+com.mad.sensorapp-lifecycle-livedata-2.6.2-46 C:\Users\Aryann\.gradle\caches\8.9\transforms\ff18984040c9574205787f0ce8c1b88e\transformed\lifecycle-livedata-2.6.2\res
+com.mad.sensorapp-jetified-viewpager2-1.1.0-47 C:\Users\Aryann\.gradle\caches\8.9\transforms\fffc116ab141474b28e0b11f8016369f\transformed\jetified-viewpager2-1.1.0\res
+com.mad.sensorapp-pngs-48 C:\Users\Aryann\Downloads\FINAL PROJECTS\SensorAppPro\SensorAppPro\app\build\generated\res\pngs\debug
+com.mad.sensorapp-resValues-49 C:\Users\Aryann\Downloads\FINAL PROJECTS\SensorAppPro\SensorAppPro\app\build\generated\res\resValues\debug
+com.mad.sensorapp-packageDebugResources-50 C:\Users\Aryann\Downloads\FINAL PROJECTS\SensorAppPro\SensorAppPro\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.mad.sensorapp-packageDebugResources-51 C:\Users\Aryann\Downloads\FINAL PROJECTS\SensorAppPro\SensorAppPro\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.mad.sensorapp-debug-52 C:\Users\Aryann\Downloads\FINAL PROJECTS\SensorAppPro\SensorAppPro\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.mad.sensorapp-debug-53 C:\Users\Aryann\Downloads\FINAL PROJECTS\SensorAppPro\SensorAppPro\app\src\debug\res
+com.mad.sensorapp-main-54 C:\Users\Aryann\Downloads\FINAL PROJECTS\SensorAppPro\SensorAppPro\app\src\main\res

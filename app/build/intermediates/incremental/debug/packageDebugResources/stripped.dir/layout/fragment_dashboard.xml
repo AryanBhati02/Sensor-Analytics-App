@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="80dp"
+        android:clipToPadding="false">
+
+        <!-- ── Header ─────────────────────────────────────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="SENSOR" android:textColor="@color/accent_cyan"
+                    android:textSize="11sp" android:letterSpacing="0.3" android:fontFamily="monospace"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Dashboard" android:textColor="@color/text_primary"
+                    android:textSize="26sp" android:textStyle="bold"/>
+            </LinearLayout>
+
+            <TextView android:id="@+id/tvStatus"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="● LIVE" android:textColor="@color/accent_green"
+                android:textSize="11sp" android:fontFamily="monospace"
+                android:background="@drawable/chip_bg_green"
+                android:paddingStart="10dp" android:paddingEnd="10dp"
+                android:paddingTop="5dp" android:paddingBottom="5dp"/>
+        </LinearLayout>
+
+        <!-- ── Activity / Steps mini-cards ────────────────────────────────── -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="12dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginEnd="6dp"
+                app:cardBackgroundColor="@color/card_bg" app:cardCornerRadius="14dp"
+                app:strokeColor="@color/divider" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="ACTIVITY" android:textColor="@color/text_muted"
+                        android:textSize="9sp" android:letterSpacing="0.15" android:fontFamily="monospace"/>
+                    <TextView android:id="@+id/tvActivity"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🧍 Detecting…" android:textColor="@color/text_primary"
+                        android:textSize="13sp" android:textStyle="bold" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:layout_marginStart="6dp"
+                app:cardBackgroundColor="@color/card_bg" app:cardCornerRadius="14dp"
+                app:strokeColor="@color/divider" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="STEPS TODAY" android:textColor="@color/text_muted"
+                        android:textSize="9sp" android:letterSpacing="0.15" android:fontFamily="monospace"/>
+                    <TextView android:id="@+id/tvSteps"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="👟 —" android:textColor="@color/accent_green"
+                        android:textSize="13sp" android:textStyle="bold" android:layout_marginTop="4dp"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Shake indicator -->
+        <TextView android:id="@+id/tvShake"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="" android:textColor="@color/accent_cyan"
+            android:textSize="13sp" android:fontFamily="monospace"
+            android:gravity="center" android:layout_marginBottom="10dp"/>
+
+        <!-- ══ ACCELEROMETER CARD ══════════════════════════════════════════ -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardAccel"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/card_bg" app:cardCornerRadius="20dp"
+            app:cardElevation="4dp" app:strokeColor="@color/divider" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="18dp">
+                <!-- Header row -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+                    <TextView android:layout_width="40dp" android:layout_height="40dp"
+                        android:text="📡" android:textSize="18sp" android:gravity="center"
+                        android:background="@drawable/icon_bg_cyan" android:layout_marginEnd="12dp"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Accelerometer" android:textColor="@color/text_primary"
+                            android:textSize="15sp" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="m/s²  ·  X · Y · Z" android:textColor="@color/text_muted"
+                            android:textSize="10sp" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                    <View android:id="@+id/dotAccel" android:layout_width="8dp"
+                        android:layout_height="8dp" android:background="@drawable/dot_cyan"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginBottom="12dp"/>
+                <!-- XYZ values -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="12dp">
+                    <TextView android:id="@+id/tvAccelX" android:layout_width="0dp"
+                        android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="X  0.000" android:textColor="@color/accent_cyan"
+                        android:textSize="14sp" android:fontFamily="monospace"/>
+                    <TextView android:id="@+id/tvAccelY" android:layout_width="0dp"
+                        android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="Y  0.000" android:textColor="@color/accent_green"
+                        android:textSize="14sp" android:fontFamily="monospace" android:gravity="center"/>
+                    <TextView android:id="@+id/tvAccelZ" android:layout_width="0dp"
+                        android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="Z  0.000" android:textColor="@color/accent_amber"
+                        android:textSize="14sp" android:fontFamily="monospace" android:gravity="end"/>
+                </LinearLayout>
+                <!-- Stats -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:background="@drawable/stats_row_bg"
+                    android:padding="10dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="MIN" android:textColor="@color/text_muted" android:textSize="9sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/tvAccelMin" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="—"
+                            android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/divider"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="AVG" android:textColor="@color/text_muted" android:textSize="9sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/tvAccelAvg" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="—"
+                            android:textColor="@color/accent_cyan" android:textSize="12sp" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/divider"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="MAX" android:textColor="@color/text_muted" android:textSize="9sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/tvAccelMax" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="—"
+                            android:textColor="@color/accent_red" android:textSize="12sp" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ══ LIGHT CARD ═══════════════════════════════════════════════════ -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardLight"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/card_bg" app:cardCornerRadius="20dp"
+            app:cardElevation="4dp" app:strokeColor="@color/divider" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="18dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+                    <TextView android:layout_width="40dp" android:layout_height="40dp"
+                        android:text="☀️" android:textSize="18sp" android:gravity="center"
+                        android:background="@drawable/icon_bg_amber" android:layout_marginEnd="12dp"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Light Intensity" android:textColor="@color/text_primary"
+                            android:textSize="15sp" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="lx  ·  Ambient" android:textColor="@color/text_muted"
+                            android:textSize="10sp" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                    <View android:id="@+id/dotLight" android:layout_width="8dp"
+                        android:layout_height="8dp" android:background="@drawable/dot_amber"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginBottom="12dp"/>
+                <TextView android:id="@+id/tvLightVal"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="— lx" android:textColor="@color/accent_amber"
+                    android:textSize="32sp" android:textStyle="bold" android:fontFamily="monospace"
+                    android:layout_marginBottom="10dp"/>
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progressLight"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:trackThickness="6dp" app:trackCornerRadius="3dp"
+                    app:indicatorColor="@color/accent_amber" app:trackColor="@color/divider"
+                    android:progress="0"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:background="@drawable/stats_row_bg" android:padding="10dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="MIN" android:textColor="@color/text_muted" android:textSize="9sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/tvLightMin" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="—"
+                            android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/divider"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="AVG" android:textColor="@color/text_muted" android:textSize="9sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/tvLightAvg" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="—"
+                            android:textColor="@color/accent_amber" android:textSize="12sp" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/divider"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="MAX" android:textColor="@color/text_muted" android:textSize="9sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/tvLightMax" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="—"
+                            android:textColor="@color/accent_red" android:textSize="12sp" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ══ PROXIMITY CARD ════════════════════════════════════════════════ -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardProx"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/card_bg" app:cardCornerRadius="20dp"
+            app:cardElevation="4dp" app:strokeColor="@color/divider" app:strokeWidth="1dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="18dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+                    <TextView android:layout_width="40dp" android:layout_height="40dp"
+                        android:text="📶" android:textSize="18sp" android:gravity="center"
+                        android:background="@drawable/icon_bg_green" android:layout_marginEnd="12dp"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Proximity" android:textColor="@color/text_primary"
+                            android:textSize="15sp" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="cm  ·  Distance" android:textColor="@color/text_muted"
+                            android:textSize="10sp" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                    <View android:id="@+id/dotProx" android:layout_width="8dp"
+                        android:layout_height="8dp" android:background="@drawable/dot_green"/>
+                </LinearLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp"
+                    android:background="@color/divider" android:layout_marginBottom="12dp"/>
+                <TextView android:id="@+id/tvProxVal"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="—" android:textColor="@color/accent_green"
+                    android:textSize="32sp" android:textStyle="bold" android:fontFamily="monospace"
+                    android:layout_marginBottom="12dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:background="@drawable/stats_row_bg" android:padding="10dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="MIN" android:textColor="@color/text_muted" android:textSize="9sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/tvProxMin" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="—"
+                            android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                    <View android:layout_width="1dp" android:layout_height="match_parent" android:background="@color/divider"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="MAX" android:textColor="@color/text_muted" android:textSize="9sp" android:fontFamily="monospace"/>
+                        <TextView android:id="@+id/tvProxMax" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:text="—"
+                            android:textColor="@color/accent_red" android:textSize="12sp" android:fontFamily="monospace"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

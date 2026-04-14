@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark">
+
+    <!-- Header -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:paddingStart="16dp" android:paddingEnd="16dp"
+        android:paddingTop="20dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="ORIENTATION" android:textColor="@color/accent_purple"
+            android:textSize="11sp" android:letterSpacing="0.3" android:fontFamily="monospace"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Compass" android:textColor="@color/text_primary"
+            android:textSize="26sp" android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- 4-tab bar -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/compassTabLayout"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="12dp" android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" android:background="@color/card_bg"
+        app:tabGravity="fill" app:tabMode="fixed"
+        app:tabTextColor="@color/tab_text_purple"
+        app:tabIndicatorColor="@color/accent_purple"
+        app:tabIndicatorHeight="3dp"
+        app:tabTextAppearance="@style/TabTextSmall">
+        <com.google.android.material.tabs.TabItem android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Compass"/>
+        <com.google.android.material.tabs.TabItem android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="3D Cube"/>
+        <com.google.android.material.tabs.TabItem android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Gyro Ball"/>
+        <com.google.android.material.tabs.TabItem android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="Bubble"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- Orientation info row -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:paddingStart="16dp" android:paddingEnd="16dp"
+        android:paddingTop="10dp" android:paddingBottom="2dp">
+        <TextView android:id="@+id/tvAzimuth" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Az    0.0°" android:textColor="@color/accent_cyan"
+            android:textSize="12sp" android:fontFamily="monospace"/>
+        <TextView android:id="@+id/tvPitch" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Pt   +0.0°" android:textColor="@color/accent_green"
+            android:textSize="12sp" android:fontFamily="monospace" android:gravity="center"/>
+        <TextView android:id="@+id/tvRoll" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Rl   +0.0°" android:textColor="@color/accent_amber"
+            android:textSize="12sp" android:fontFamily="monospace" android:gravity="end"/>
+    </LinearLayout>
+
+    <!-- Panel container -->
+    <FrameLayout android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:layout_marginTop="8dp">
+
+        <!-- Compass -->
+        <LinearLayout android:id="@+id/panelCompass"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical" android:gravity="center">
+            <com.mad.sensorapp.views.CompassView android:id="@+id/compassView"
+                android:layout_width="300dp" android:layout_height="300dp"/>
+            <TextView android:id="@+id/tvCardinal"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="N" android:textColor="@color/text_primary"
+                android:textSize="24sp" android:textStyle="bold" android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- 3D Cube -->
+        <LinearLayout android:id="@+id/panelCube"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical" android:gravity="center" android:visibility="gone">
+            <com.mad.sensorapp.views.OrientationCubeView android:id="@+id/cubeView"
+                android:layout_width="280dp" android:layout_height="280dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Tilt your device to rotate the cube"
+                android:textColor="@color/text_muted" android:textSize="12sp"
+                android:fontFamily="monospace" android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+        <!-- Gyro Ball -->
+        <LinearLayout android:id="@+id/panelBall"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical" android:gravity="center" android:visibility="gone">
+            <com.mad.sensorapp.views.GyroscopeBallView android:id="@+id/ballView"
+                android:layout_width="300dp" android:layout_height="300dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Tilt to roll the ball"
+                android:textColor="@color/text_muted" android:textSize="12sp"
+                android:fontFamily="monospace" android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+        <!-- Bubble Visualization -->
+        <LinearLayout android:id="@+id/panelBubble"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:orientation="vertical" android:gravity="center" android:visibility="gone">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="PROXIMITY" android:textColor="@color/text_muted"
+                android:textSize="10sp" android:letterSpacing="0.2"
+                android:fontFamily="monospace" android:layout_marginBottom="8dp"/>
+            <com.mad.sensorapp.views.BubbleView android:id="@+id/bubbleView"
+                android:layout_width="300dp" android:layout_height="300dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Cover proximity sensor to see bubble expand"
+                android:textColor="@color/text_muted" android:textSize="12sp"
+                android:fontFamily="monospace" android:layout_marginTop="16dp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+    </FrameLayout>
+</LinearLayout>

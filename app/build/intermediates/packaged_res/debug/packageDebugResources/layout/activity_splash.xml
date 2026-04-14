@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/splash_bg">
+
+    <!-- Top spacer (35% of height) -->
+    <View android:layout_width="0dp" android:layout_height="0dp"
+        android:layout_weight="35"/>
+
+    <!-- Glow + Logo container -->
+    <FrameLayout
+        android:id="@+id/logoContainer"
+        android:layout_width="140dp"
+        android:layout_height="140dp">
+
+        <!-- Glow halo -->
+        <View
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="@drawable/splash_glow"/>
+
+        <!-- Outer ring -->
+        <View
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:background="@drawable/splash_ring_outer"/>
+
+        <!-- Logo icon -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logoIcon"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_splash_logo"
+            android:tint="@color/accent_cyan"/>
+
+        <!-- Scan line -->
+        <View
+            android:id="@+id/scanLine"
+            android:layout_width="72dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:background="@drawable/scan_line_gradient"
+            android:elevation="4dp"/>
+    </FrameLayout>
+
+    <!-- App title -->
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SENSORPRO"
+        android:textColor="@color/text_primary"
+        android:textSize="30sp"
+        android:letterSpacing="0.2"
+        android:textStyle="bold"
+        android:layout_marginTop="28dp"/>
+
+    <!-- Subtitle -->
+    <TextView
+        android:id="@+id/appSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REAL-TIME SENSOR INTELLIGENCE"
+        android:textColor="@color/accent_cyan"
+        android:textSize="11sp"
+        android:letterSpacing="0.3"
+        android:fontFamily="monospace"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Bottom spacer (push loading bar to bottom) -->
+    <View android:layout_width="0dp" android:layout_height="0dp"
+        android:layout_weight="65"/>
+
+    <!-- Loading bar track -->
+    <View
+        android:layout_width="200dp"
+        android:layout_height="3dp"
+        android:background="@color/divider"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- Loading bar fill -->
+    <View
+        android:id="@+id/loadingBar"
+        android:layout_width="200dp"
+        android:layout_height="3dp"
+        android:background="@drawable/loading_bar_gradient"
+        android:transformPivotX="0dp"
+        android:layout_marginBottom="80dp"
+        android:scaleX="0"/>
+
+</LinearLayout>
